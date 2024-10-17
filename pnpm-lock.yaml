@@ -38,9 +38,6 @@ dependencies:
   '@itwin/presentation-frontend':
     specifier: ^4.9.4
     version: 4.9.4(@itwin/core-bentley@4.9.4)(@itwin/core-common@4.9.4)(@itwin/core-frontend@4.9.4)(@itwin/core-quantity@4.9.4)(@itwin/ecschema-metadata@4.9.4)(@itwin/presentation-common@4.9.4)
-  '@itwin/reality-data-client':
-    specifier: ^1.2.1
-    version: 1.2.1(@itwin/core-bentley@4.9.4)
 
 devDependencies:
   typescript:
@@ -466,18 +463,6 @@ packages:
       '@itwin/unified-selection': 0.1.0
       rxjs: 7.8.1
       rxjs-for-await: 1.0.0(rxjs@7.8.1)
-    dev: false
-
-  /@itwin/reality-data-client@1.2.1(@itwin/core-bentley@4.9.4):
-    resolution: {integrity: sha512-pNpnO1tbsM1HwyZcr6UkZLyMczNcYFHqsnREmjYJ4GIeCMdrWKGbH5ar4hyajqc/ZkV9zO4FXFMYgQx3yKK1zQ==}
-    peerDependencies:
-      '@itwin/core-bentley': ^4.0.0
-    dependencies:
-      '@itwin/core-bentley': 4.9.4
-      '@itwin/core-geometry': 4.9.4
-      axios: 1.7.7
-    transitivePeerDependencies:
-      - debug
     dev: false
 
   /@itwin/unified-selection@0.1.0:

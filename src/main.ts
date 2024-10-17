@@ -20,7 +20,6 @@ import {
 } from "@itwin/core-frontend";
 import { PresentationRpcInterface } from "@itwin/presentation-common";
 import { Presentation } from "@itwin/presentation-frontend";
-import { RealityDataAccessClient } from "@itwin/reality-data-client";
 
 const {
   IMJS_ACCESS_TOKEN,
@@ -33,10 +32,6 @@ const {
 const authClient: AuthorizationClient = {
   getAccessToken: async () => IMJS_ACCESS_TOKEN,
 };
-
-const rdClient = new RealityDataAccessClient({
-  authorizationClient: authClient,
-});
 
 const rpcInterfaces = [
   IModelReadRpcInterface,
@@ -65,7 +60,6 @@ await IModelApp.startup({
   tileAdmin: {
     cesiumIonKey: IMJS_CESIUM_ION_KEY,
   },
-  realityDataAccess: rdClient,
 });
 
 await Presentation.initialize();
@@ -109,21 +103,3 @@ IModelApp.viewManager.addViewport(vp);
 
 IModelApp.tools.run(StandardViewTool.toolId, vp, StandardViewId.RightIso);
 IModelApp.tools.run(FitViewTool.toolId, vp, true, false);
-
-const REALITY_DATA_URL =
-  "https://api.bentley.com/reality-management/reality-data";
-
-const { realityDatas } = await rdClient.getRealityDatas(
-  IMJS_ACCESS_TOKEN,
-  IMJS_ITWIN_ID,
-  undefined
-);
-console.log({ realityDatas });
-
-for (const rd of realityDatas) {
-  // const tilesetUrl = await rdClient.getRealityDataUrl(IMJS_ITWIN_ID, rd.id);
-  const tilesetUrl = `${REALITY_DATA_URL}/${rd.id}?iTwinId=${IMJS_ITWIN_ID}`;
-  vp.displayStyle.attachRealityModel({
-    tilesetUrl,
-  });
-}

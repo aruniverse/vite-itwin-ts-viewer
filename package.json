@@ -24,7 +24,6 @@
     "@itwin/ecschema-metadata": "^4.9.4",
     "@itwin/imodels-access-frontend": "^5.2.3",
     "@itwin/presentation-common": "^4.9.4",
-    "@itwin/presentation-frontend": "^4.9.4",
-    "@itwin/reality-data-client": "^1.2.1"
+    "@itwin/presentation-frontend": "^4.9.4"
   }
 }
