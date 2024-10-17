@@ -26,18 +26,9 @@ dependencies:
   '@itwin/core-quantity':
     specifier: ^4.9.4
     version: 4.9.4(@itwin/core-bentley@4.9.4)
-  '@itwin/ecschema-metadata':
-    specifier: ^4.9.4
-    version: 4.9.4(@itwin/core-bentley@4.9.4)(@itwin/core-quantity@4.9.4)
   '@itwin/imodels-access-frontend':
     specifier: ^5.2.3
     version: 5.2.3(@itwin/core-bentley@4.9.4)(@itwin/core-common@4.9.4)(@itwin/core-frontend@4.9.4)
-  '@itwin/presentation-common':
-    specifier: ^4.9.4
-    version: 4.9.4(@itwin/core-bentley@4.9.4)(@itwin/core-common@4.9.4)(@itwin/core-quantity@4.9.4)(@itwin/ecschema-metadata@4.9.4)
-  '@itwin/presentation-frontend':
-    specifier: ^4.9.4
-    version: 4.9.4(@itwin/core-bentley@4.9.4)(@itwin/core-common@4.9.4)(@itwin/core-frontend@4.9.4)(@itwin/core-quantity@4.9.4)(@itwin/ecschema-metadata@4.9.4)(@itwin/presentation-common@4.9.4)
 
 devDependencies:
   typescript:
@@ -371,16 +362,6 @@ packages:
       - '@itwin/core-geometry'
     dev: false
 
-  /@itwin/ecschema-metadata@4.9.4(@itwin/core-bentley@4.9.4)(@itwin/core-quantity@4.9.4):
-    resolution: {integrity: sha512-cf/+o3pQ8VAt4VriPMmb9GHGr+hc8jg7Tht/iF4QWG9VsNKqCPOTeTPI6gbgzwXaPFzDH1YYJlCLEa7nKj2Veg==}
-    peerDependencies:
-      '@itwin/core-bentley': ^4.9.4
-      '@itwin/core-quantity': ^4.9.4
-    dependencies:
-      '@itwin/core-bentley': 4.9.4
-      '@itwin/core-quantity': 4.9.4(@itwin/core-bentley@4.9.4)
-    dev: false
-
   /@itwin/imodels-access-common@5.2.3(@itwin/core-bentley@4.9.4)(@itwin/core-common@4.9.4):
     resolution: {integrity: sha512-HP3oEe2715rr0EyExBkUgLxrCB6YbkkgiIQc4e8I0zzv/sW+7yygZOC/K/hd+/roTFkdNsiT+W446Bh5cnVuOg==}
     peerDependencies:
@@ -428,45 +409,6 @@ packages:
       axios: 1.7.7
     transitivePeerDependencies:
       - debug
-    dev: false
-
-  /@itwin/presentation-common@4.9.4(@itwin/core-bentley@4.9.4)(@itwin/core-common@4.9.4)(@itwin/core-quantity@4.9.4)(@itwin/ecschema-metadata@4.9.4):
-    resolution: {integrity: sha512-AjrUka17V475LZQuz9VD+ed4vcUnwov4blz0a/LoAxV8Qbsc38nVaWrw3E4kUP4RuVW2OkZNZUOHu4qHd8BChQ==}
-    peerDependencies:
-      '@itwin/core-bentley': ^4.9.4
-      '@itwin/core-common': ^4.9.4
-      '@itwin/core-quantity': ^4.9.4
-      '@itwin/ecschema-metadata': ^4.9.4
-    dependencies:
-      '@itwin/core-bentley': 4.9.4
-      '@itwin/core-common': 4.9.4(@itwin/core-bentley@4.9.4)(@itwin/core-geometry@4.9.4)
-      '@itwin/core-quantity': 4.9.4(@itwin/core-bentley@4.9.4)
-      '@itwin/ecschema-metadata': 4.9.4(@itwin/core-bentley@4.9.4)(@itwin/core-quantity@4.9.4)
-    dev: false
-
-  /@itwin/presentation-frontend@4.9.4(@itwin/core-bentley@4.9.4)(@itwin/core-common@4.9.4)(@itwin/core-frontend@4.9.4)(@itwin/core-quantity@4.9.4)(@itwin/ecschema-metadata@4.9.4)(@itwin/presentation-common@4.9.4):
-    resolution: {integrity: sha512-N3l6A0C06cdda+JWSnuQK72dBqrYzD/ydfPRO/LWcBbNer5Cc7d9FpaBdNVc58Z973wcly3GsiO4xYffHZpIng==}
-    peerDependencies:
-      '@itwin/core-bentley': ^4.9.4
-      '@itwin/core-common': ^4.9.4
-      '@itwin/core-frontend': ^4.9.4
-      '@itwin/core-quantity': ^4.9.4
-      '@itwin/ecschema-metadata': ^4.9.4
-      '@itwin/presentation-common': ^4.9.4
-    dependencies:
-      '@itwin/core-bentley': 4.9.4
-      '@itwin/core-common': 4.9.4(@itwin/core-bentley@4.9.4)(@itwin/core-geometry@4.9.4)
-      '@itwin/core-frontend': 4.9.4(@itwin/appui-abstract@4.9.4)(@itwin/core-bentley@4.9.4)(@itwin/core-common@4.9.4)(@itwin/core-geometry@4.9.4)(@itwin/core-orbitgt@4.9.4)(@itwin/core-quantity@4.9.4)
-      '@itwin/core-quantity': 4.9.4(@itwin/core-bentley@4.9.4)
-      '@itwin/ecschema-metadata': 4.9.4(@itwin/core-bentley@4.9.4)(@itwin/core-quantity@4.9.4)
-      '@itwin/presentation-common': 4.9.4(@itwin/core-bentley@4.9.4)(@itwin/core-common@4.9.4)(@itwin/core-quantity@4.9.4)(@itwin/ecschema-metadata@4.9.4)
-      '@itwin/unified-selection': 0.1.0
-      rxjs: 7.8.1
-      rxjs-for-await: 1.0.0(rxjs@7.8.1)
-    dev: false
-
-  /@itwin/unified-selection@0.1.0:
-    resolution: {integrity: sha512-1Pe2i3sw5dK4h394uC5wTRWvnXxeBZGv+t9LcG7tQr2L+l0Hv+Ryo5+yTN34kABEhMe2UwSHnBRU8jOGsiorIQ==}
     dev: false
 
   /@itwin/webgl-compatibility@4.9.4:
@@ -1060,20 +1002,6 @@ packages:
       queue-microtask: 1.2.3
     dev: true
 
-  /rxjs-for-await@1.0.0(rxjs@7.8.1):
-    resolution: {integrity: sha512-MJhvf1vtQaljd5wlzsasvOjcohVogzkHkUI0gFE9nGhZ15/fT2vR1CjkLEh37oRqWwpv11vHo5D+sLM+Aw9Y8g==}
-    peerDependencies:
-      rxjs: ^7.0.0
-    dependencies:
-      rxjs: 7.8.1
-    dev: false
-
-  /rxjs@7.8.1:
-    resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
-    dependencies:
-      tslib: 2.8.0
-    dev: false
-
   /source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
@@ -1088,10 +1016,6 @@ packages:
 
   /tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
-    dev: false
-
-  /tslib@2.8.0:
-    resolution: {integrity: sha512-jWVzBLplnCmoaTr13V9dYbiQ99wvZRd0vNWaDRg+aVYRcjDF3nDksxFDE/+fkXnKhpnUUkmx5pK/v8mCtLVqZA==}
     dev: false
 
   /typescript@5.6.3:

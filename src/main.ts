@@ -18,8 +18,6 @@ import {
   StandardViewTool,
   ViewCreator3d,
 } from "@itwin/core-frontend";
-import { PresentationRpcInterface } from "@itwin/presentation-common";
-import { Presentation } from "@itwin/presentation-frontend";
 
 const {
   IMJS_ACCESS_TOKEN,
@@ -36,7 +34,6 @@ const authClient: AuthorizationClient = {
 const rpcInterfaces = [
   IModelReadRpcInterface,
   IModelTileRpcInterface,
-  PresentationRpcInterface,
 ];
 
 BentleyCloudRpcManager.initializeClient(
@@ -62,8 +59,6 @@ await IModelApp.startup({
   },
 });
 
-await Presentation.initialize();
-
 const iModelConnection = await CheckpointConnection.openRemote(
   IMJS_ITWIN_ID,
   IMJS_IMODEL_ID
@@ -85,11 +80,6 @@ iModelConnection.selectionSet.onChanged.addListener(async (ev) => {
       console.log(`ECInstanceId is ${row[0]}`);
       console.log(`ECClassId is ${row.ecclassid}`);
     }
-    const properties = await Presentation.presentation.getElementProperties({
-      imodel: iModelConnection,
-      elementId,
-    });
-    console.log(properties);
   }
 });
 
