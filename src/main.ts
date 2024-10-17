@@ -6,8 +6,6 @@ import {
   BentleyCloudRpcManager,
   IModelReadRpcInterface,
   IModelTileRpcInterface,
-  QueryBinder,
-  QueryRowFormat,
 } from "@itwin/core-common";
 import {
   CheckpointConnection,
@@ -75,16 +73,6 @@ iModelConnection.selectionSet.onChanged.addListener(async (ev) => {
     return;
   }
   for (const elementId of ev.set.elements.values()) {
-    for await (const row of iModelConnection.createQueryReader(
-      "SELECT * FROM bis.Element WHERE ECInstanceId = ?",
-      QueryBinder.from([elementId]),
-      {
-        rowFormat: QueryRowFormat.UseECSqlPropertyNames,
-      }
-    )) {
-      console.log(`ECInstanceId is ${row[0]}`);
-      console.log(`ECClassId is ${row.ecclassid}`);
-    }
     const properties = await Presentation.presentation.getElementProperties({
       imodel: iModelConnection,
       elementId,
